@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>project Gomycode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    </link><!--library of icon-->
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+		function date_heure(id)
+		{
+			date = new Date;
+			annee = date.getFullYear();
+			moi = date.getMonth();
+			mois = new Array('Janvier','F&eacute;vrier','Mars','Avril','Mai','Juin','Juillet','Ao&ucirc;t','Septembre','Octobre','Novembre','D&eacute;cembre');
+			j = date.getDate();
+			jour = date.getDay();
+			jours = new Array('Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi');
+			h = date.getHours();
+			if(h<10)
+			{
+				h = "0"+h;
+			}
+			m = date.getMinutes();
+			if(m<10)
+			{
+				m = "0"+m;
+			}
+			s = date.getSeconds();
+			if(s<10)
+			{
+				s = "0"+s;
+			}
+			resultat = 'Nous sommes le '+jours[jour]+' '+j+' '+mois[moi]+' '+annee+' il est '+h+':'+m+':'+s;
+			document.getElementById(id).innerHTML = resultat;
+			setTimeout('date_heure("'+id+'");','1000');
+			return true;
+		}
+        </script>
+</head>
+
+<body id='body-ferme-page'>
+    <header>
+        <nav id="menu">            
+            <ul>
+                <li ><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li ><a href="/about"><i class="fa fa-fw fa-info"></i>About</a></li>
+                <li ><a href="/work"><i class="fa fa-fw fa-tools"></i>Work</a></li>
+                <li ><a href="/resume"><i class="fa fa-fw fa-book-open"></i>Resume</a></li>
+                <li ><a href="#contact"><i class="fa fa-fw fa-envelope"></i>Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <div>
+        
+        <section id="ferme"> 
+            <br />    <br/>
+            <br/><h1><span id="date_heure"></span></h1><br/><br/>
+            <h1>Nous sommes fermé actuellement, vous pouvez nous consulter du Lundi à Vendredi de 8h du matin jusqu'à 17h </h1>
+                
+                <script type="text/javascript">window.onload = date_heure('date_heure');</script>
+        </section>
+        
+    </div>
+    <footer>
+        <section id="contact">
+            <h2 class="titre-principal">
+                Contact:
+            </h2>
+            <a href="mailto:mahjoubnasreddine1993@gmail.com" target="_blank" class="fa fa-envelope"></a>
+            <a href="https://www.linkedin.com/in/nasreddine-mahjoub-a3050916b/" target="_blank" class="fab fa-linkedin"></a>
+            <a href="https://www.facebook.com/nasri.mahjoub/" target="_blank" class="fab fa-facebook"></a>
+            <a href="" target="" class="fab fa-whatsapp"></a>
+        </section>
+    </footer>
+</body>
+
+</html>
